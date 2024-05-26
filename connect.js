@@ -8,8 +8,8 @@ app.use(cors());
 
 var conexion = mysql.createConnection({
   host: "localhost",
-  user: "gabriel",
-  password: "gabriel4132",
+  user: "root",
+  password: "admin",
   database: "conexion",
 });
 
