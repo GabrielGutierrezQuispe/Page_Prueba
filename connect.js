@@ -1,19 +1,14 @@
-var express = require("express");
-var http = require("http");
-var compression = require("compression");
+// Módulos requeridos
+const express = require('express');
+const http = require('http');
+var compression = require('compression');
 require('dotenv').config();
-var cors = require("cors");
+const {v4: uuidv4} = require('uuid');
+const cors = require('cors');
 
-var app = express();
-app.use(express.json());
-app.use(cors());
+const app = express();
 app.use(compression());
-
-const puerto = process.env.PUERTO || 3000;
-
-app.listen(puerto, function () {
-  console.log("Servidor funcionando en puerto: " + puerto);
-});
+app.use(cors());
 
 // Servidor HTTP
 const serverHttp = http.createServer(app);
